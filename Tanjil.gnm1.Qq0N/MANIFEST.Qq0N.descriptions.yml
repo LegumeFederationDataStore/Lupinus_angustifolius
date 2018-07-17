@@ -1,0 +1,5 @@
+# filename_in_this_repository: description
+  lupan.Tanjil.gnm1.Qq0N.genome_main.fna.gz: Genome assembly: pseudochromosome + unplaced scaffold assemblies
+  lupan.Tanjil.gnm1.Qq0N.scaffolds.fna.gz: Genome assembly: all scaffolds
+  lupan.Tanjil.gnm1.Qq0N.scaffolds_unassigned.fna.gz: Genome assembly: scaffolds not included in pseudomolecules
+

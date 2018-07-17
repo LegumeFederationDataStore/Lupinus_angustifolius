@@ -1,0 +1,68 @@
+identifier: nnV9
+
+provenance: The files in this directory originated from http://www.lupinexpress.org There is also a corresponding genome assembly at GenBank - but that assembly is organized as scaffold sequences rather than as pseudomolecule assemblies, so for the purposes of loading genome browsers, gene families, etc., we instead use the pseudomolecule assemblies and corresponding pseudomolecule-derived annotation files from LupinExpress.
+The LupinExpress repository is considered the primary repository and authoritative; files in this present directory are derived, and may have changes, as noted below. The files here are held as part of the LegumeInfo and LegumeFederation projects, and are made available here for the purpose of reproducibility of analyses at these sites (e.g. gene family alignments and phylogenies, genome browsers, etc.) and for further use by researchers, as that research extends other analyses at these project websites. If you are conducting research on large-scale data sets for this species, please consider retrieving the data from the primary repository. If you use the data in the present directory, please 1) please cite the data appropriately - generally referring to the original publications for this data; and if you make use of any significant modifications in the files (noted below under "Transformations" where applicable), then please also cite the respective database project(s) related to this directory.
+
+source: http://www.lupinexpress.org
+
+subject: genome annotation files
+
+related_to: See genome assembly files at Tanjil.gnm1.Qq0N
+
+scientific_name: Lupinus angustifolius
+
+taxid: 3871
+
+bioproject: PRJNA299755
+
+scientific_name_abbrev: lupan
+
+genotype: Tanjil
+
+description: Genome annotations for the Tanjil genome assembly for Lupinus angustifolius.
+
+dataset_doi: 
+genbank_accession: GCA_001865875.1
+
+original_file_creation_date: 
+local_file_creation_date: 
+publication_doi: https://doi.org/10.1111/pbi.12615
+
+dataset_release_date: 
+publication_title: A comprehensive draft genome sequence for lupin (Lupinus angustifolius), an emerging health food: Insights into plant-microbe interactions and legume evolution
+
+contributors: James K. Hane, Yao Ming, Lars G. Kamphuis, Matthew N. Nelson, Gagan Garg, Craig A. Atkins, Philipp E. Bayer, Armando Bravo, Scott Bringans, Steven Cannon, David Edwards, Rhonda Foley, Ling-ling Gao, Maria J. Harrison, Wei Huang, Bhavna Hurgobin, Sean Li, Cheng-Wu Liu, Annette McGrath, Grant Morahan, Jeremy Murray, James Weller, Jianbo Jian, Karam B. Singh
+
+data_curators: James Hane, Wei Huang (for GFF for GBrowse at legumeinfo.org)
+
+public_access_level: Public
+
+license: Open
+
+keywords: 
+citations: James K. Hane, Yao Ming, Lars G. Kamphuis, Matthew N. Nelson, Gagan Garg, Craig A. Atkins, Philipp E. Bayer, Armando Bravo, Scott Bringans, Steven Cannon, David Edwards, Rhonda Foley, Ling-ling Gao, Maria J. Harrison, Wei Huang, Bhavna Hurgobin, Sean Li, Cheng-Wu Liu, Annette McGrath, Grant Morahan, Jeremy Murray, James Weller, Jianbo Jian, Karam B. Singh (2016) A comprehensive draft genome sequence for lupin (Lupinus angustifolius), an emerging health food: Insights into plant-microbe interactions and legume evolution. Plant Biotechnology Journal, DOI: 10.1111/pbi.12615
+
+file_transformation: 
+  - Modifications were made to the GFF for display in GBrowse. File for display was titled
+  - Lupinus_ang_Tanjil.a1.v1.genes_in_pchr_acaffs_ge10k.final.gff3 . Modifications as follows (Wei Huang and Steven Cannon):
+  - Due to some features lacking primary_id, gene, We need to work on the gff file before upload,
+  - Lup002418 add gene and mRNA features,
+  - Lup006306 deleted; bad prediction: no hits in other predicted legume genes. No gene feature in gff.
+  -   
+  - Lup018375 deleted; bad prediction (93-base repeat). Strike from sequence files.
+  - Lup021820 deleted; bad (gappy) prediction. Strike from sequence files.
+  - Lup012883  Bad prediction (CDS only; gappy gene prediction). Strike from CDS and peptide files
+  - Added the following to lupan.Tanjil.gnm1.ann1.nnV9.genes_pchr_plus_scaff.gff3:
+  - Lup008273, Lup002418
+  - perl -pi -e 's/ +/\t/g if 229259' Lupinus_ang_Tanjil.a1.v1.genes_in_pchr_acaffs_ge10k.modified.gff3 
+  - perl -pi -e 's/ +/\t/g if 229260' Lupinus_ang_Tanjil.a1.v1.genes_in_pchr_acaffs_ge10k.modified.gff3                        
+  - cat Lupinus_ang_Tanjil.a1.v1.genes_in_pchr_acaffs_ge10k.modified.gff3 |
+  - perl -ne 'if (/gene/ && /source_id/) {s/(ID=Lup\d+)\.\d/$1/;
+  - s/(Name=Lup\d+)\.\d/$1/;print;}elsif (/mRNA/ && /source_id/){s/(Parent=Lup\d+)\.\d/$1/;print;}else {print}'
+  - >Lupinus_ang_Tanjil.a1.v1.genes_in_pchr_acaffs_ge10k.final.gff3
+  - Lupinus_ang_Tanjil.a1.v1.genes_in_pchr_acaffs_ge10k.final.gff3 was then renamed to 
+  - lupan.Tanjil.gnm1.ann1.nnV9.genes_in_pchr_plus_scaff_ge10k.gff3
+
+changes: 
+  - 2018-03-01 pulled file lists into MANIFESTS
+  - 2018-03-01 filename cleanup
