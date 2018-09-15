@@ -66,3 +66,4 @@ file_transformation:
 changes: 
   - 2018-03-01 pulled file lists into MANIFESTS
   - 2018-03-01 filename cleanup
+  - 2018-09-15 fasta header changes (s/>/>lupan.Tanjil.gnm1.ann1./)
